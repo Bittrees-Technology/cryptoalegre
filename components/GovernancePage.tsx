@@ -5,136 +5,249 @@ type Locale = 'pt' | 'en';
 
 const copy = {
   pt: {
-    title: 'Governação com regras claras e autoridade limitada.',
-    intro: 'A Constituição estabelece como a associação decide, resolve conflitos e evolui. A camada tecnológica existe para tornar essas regras verificáveis e executáveis pelos membros.',
+    eyebrow: 'Governação · visão operacional',
+    title: 'Quem decide, como se vota e o que acontece depois.',
+    intro: 'Um guia prático para aplicar a Constituição. O texto constitucional continua a ser a fonte de autoridade sempre que houver dúvida ou conflito.',
     status: 'Pendente de ratificação pelos membros fundadores',
-    council: 'Conselho Primário',
-    councilText: 'O principal órgão de governação define a direção geral, garante o cumprimento da missão e constitui os três Grupos Permanentes.',
-    councilFacts: [['Até 13', 'lugares'], ['24 meses', 'por mandato'], ['Ranked-choice', 'nas eleições']],
-    groupLabel: 'Estrutura constitucional',
-    groups: [
-      ['Cultura', 'Lidera a visão e os valores humanos da associação.'],
-      ['Educação', 'Cria os laços de conhecimento entre comunidade e tecnologia.'],
-      ['Tecnologia', 'Implementa ferramentas ao serviço da visão cultural.'],
+    constitution: 'Ler a Constituição completa',
+    authorityLabel: 'Autoridade',
+    authorityTitle: 'Quem decide o quê',
+    authorityIntro: 'Três níveis com mandatos distintos e uma só hierarquia constitucional.',
+    authorities: [
+      {
+        number: '01',
+        name: 'Membros',
+        role: 'Base democrática',
+        text: 'Um membro, um voto. Elegem o Conselho e participam nas decisões submetidas a toda a associação.',
+        detail: '1 membro · 1 voto',
+      },
+      {
+        number: '02',
+        name: 'Conselho Primário',
+        role: 'Direção e responsabilidade',
+        text: 'Define a direção geral, constitui os Grupos e resolve matérias maiores ou formalmente escaladas.',
+        detail: '3 lugares iniciais · até 13 · mandatos de 24 meses',
+      },
+      {
+        number: '03',
+        name: 'Grupos Permanentes',
+        role: 'Iniciativas e especialização',
+        text: 'Cultura, Educação e Tecnologia desenvolvem iniciativas e decidem internamente dentro dos seus mandatos.',
+        detail: 'Cultura · Educação · Tecnologia',
+      },
     ],
-    decisions: 'Decisões e votação',
-    decisionsIntro: 'Cada membro reconhecido tem um voto. A participação pode ser direta ou delegada a outro membro, segundo procedimentos aprovados pela associação.',
-    decisionCards: [
-      ['Decisões ordinárias', '> 50%', 'Maioria simples dos votos válidos, com quórum.'],
-      ['Decisões maiores', '2/3', 'Iniciativas relevantes e alterações de políticas.'],
-      ['Emendas', '3/4', 'Voto de toda a associação, com quórum constitucional.'],
+    flowLabel: 'Da proposta à execução',
+    flowTitle: 'Uma decisão, cinco momentos',
+    flowIntro: 'O modelo operacional para despesas de tesouraria, políticas e iniciativas transforma cada decisão num registo verificável.',
+    flow: [
+      ['01', 'Propor', 'Definir objetivo, âmbito, custo, responsável e ação pedida.'],
+      ['02', 'Classificar', 'Identificar o órgão competente, o tipo de decisão e o limiar aplicável.'],
+      ['03', 'Deliberar', 'Publicar no fórum único, recolher contributos e registar conflitos de interesse.'],
+      ['04', 'Votar', 'Fixar os membros elegíveis e contar um voto por credencial ativa.'],
+      ['05', 'Executar', 'Depois da aprovação, executar a ação autorizada e publicar o resultado.'],
     ],
-    quorumTitle: 'Quórum',
-    quorumText: 'É necessária a participação ou representação válida de pelo menos 50% dos membros elegíveis do órgão decisor. Nos votos de toda a associação, contam todos os membros registados.',
-    overrideTitle: 'Autoridade de prevalência',
-    overrideText: 'Quando um órgão delegado falha dois votos válidos, não alcança quórum após três tentativas notificadas, ou entra num impasse formal, o Conselho pode adotar uma resolução vinculativa por maioria de 2/3 — sem contrariar a Constituição.',
-    conflicts: 'Resolução de conflitos',
-    conflictSteps: [
-      ['01', 'Escuta e mediação', 'O Grupo e a sua Primeira Presidência apresentam a situação ao Conselho Primário.'],
-      ['02', 'Procura de acordo', 'Conflitos entre Grupos reúnem as três Primeiras Presidências e o Conselho, procurando unanimidade.'],
-      ['03', 'Resolução vinculativa', 'Se o acordo não for possível, o Conselho pode decidir por 2/3, com quórum e registo das perspetivas.'],
+    forum: 'Abrir o fórum dos membros',
+    thresholdsLabel: 'Limiares constitucionais',
+    thresholds: [
+      ['> 50%', 'Ordinária', 'Maioria simples dos votos válidos.'],
+      ['2/3', 'Maior', 'Iniciativas relevantes e alterações de políticas.'],
+      ['3/4', 'Emenda', 'Voto de toda a associação.'],
     ],
+    quorum: 'Todos os votos oficiais exigem quórum. Salvo regra específica, participam ou estão validamente representados pelo menos 50% dos membros elegíveis.',
+    safeguardsLabel: 'Salvaguardas',
+    safeguardsTitle: 'Exceções sem atalhos',
+    conflicts: 'Conflitos e impasses',
+    conflictsText: 'O Conselho ouve o Grupo e a sua Primeira Presidência. Nos conflitos entre Grupos, reúne também as três Primeiras Presidências e procura unanimidade. Uma resolução vinculativa exige 2/3 do Conselho, quórum e registo das perspetivas.',
+    escalation: 'A intervenção pode ocorrer após dois votos válidos sem decisão, três tentativas notificadas sem quórum ou um conflito formalmente escalado.',
     amendments: 'Emendas constitucionais',
-    amendmentsIntro: 'A Constituição pode evoluir, mas só através de um processo deliberado, transparente e participado.',
-    amendmentFacts: [
-      ['17,5%', 'dos membros podem iniciar uma petição'],
-      ['45 dias', 'mínimos para discussão pública aos membros'],
-      ['50%', 'de quórum de todos os membros registados'],
-      ['3/4', 'dos votos válidos para aprovação'],
+    amendmentsText: 'Podem ser propostas pelo Conselho, por um Grupo Permanente ou por petição de membros. A proposta é pública para os membros antes de uma votação geral.',
+    amendmentFacts: [['17,5%', 'petição'], ['45 dias', 'discussão'], ['50%', 'quórum'], ['3/4', 'aprovação']],
+    boundaryLabel: 'Constituição + código',
+    boundaryTitle: 'Automatizar regras, preservar julgamento humano.',
+    boundaryIntro: 'O contrato executa condições objetivas. A associação continua responsável por factos, interpretação e devido processo.',
+    canTitle: 'O código pode aplicar',
+    can: [
+      'estado da adesão e uma credencial ativa por membro aprovado',
+      'elegibilidade fixada no início da votação e peso de um voto',
+      'quórum, limiar, prazos e ação autorizada',
+      'execução pela Safe e registo público do resultado',
     ],
-    contractLabel: 'Execução através de contratos inteligentes',
-    contractTitle: 'O código deve obedecer à Constituição.',
-    contractText: 'Os contratos de adesão, delegação, votação e execução serão publicados e verificáveis. Qualquer diferença entre o código e o texto constitucional deve suspender a ação automática e ser encaminhada para governação humana.',
-    source: 'Ler a Constituição completa',
+    cannotTitle: 'Exige decisão humana',
+    cannot: [
+      'avaliar uma contribuição qualificada ou a boa situação de um membro',
+      'determinar factos, conflitos de interesse ou abuso',
+      'interpretar a finalidade e os valores da Constituição',
+      'garantir aviso, contraditório, fundamentação e recurso',
+    ],
+    deployment: 'Os contratos de adesão e governação ainda não foram implementados. Endereços e estados oficiais serão publicados no registo blockchain da Constituição.',
+    registry: 'Consultar o registo blockchain',
   },
   en: {
-    title: 'Governance with clear rules and limited authority.',
-    intro: 'The Constitution establishes how the association decides, resolves conflicts, and evolves. The technology layer exists to make those rules verifiable and executable by members.',
+    eyebrow: 'Governance · operating view',
+    title: 'Who decides, how votes work, and what happens next.',
+    intro: 'A practical guide to applying the Constitution. The constitutional text remains the source of authority whenever doubt or conflict arises.',
     status: 'Pending ratification by the founding members',
-    council: 'Primary Council',
-    councilText: 'The main governing body sets the overall direction, ensures the mission is fulfilled, and charters the three Permanent Groups.',
-    councilFacts: [['Up to 13', 'seats'], ['24 months', 'per term'], ['Ranked-choice', 'elections']],
-    groupLabel: 'Constitutional structure',
-    groups: [
-      ['Culture', 'Leads the association’s human vision and values.'],
-      ['Education', 'Builds the knowledge bonds between community and technology.'],
-      ['Technology', 'Implements tools in service of the cultural vision.'],
+    constitution: 'Read the complete Constitution',
+    authorityLabel: 'Authority',
+    authorityTitle: 'Who decides what',
+    authorityIntro: 'Three levels with distinct mandates and one constitutional hierarchy.',
+    authorities: [
+      {
+        number: '01',
+        name: 'Members',
+        role: 'Democratic base',
+        text: 'One member, one vote. Members elect the Council and participate in decisions put to the whole association.',
+        detail: '1 member · 1 vote',
+      },
+      {
+        number: '02',
+        name: 'Primary Council',
+        role: 'Direction and accountability',
+        text: 'Sets the overall direction, charters the Groups, and resolves major or formally escalated matters.',
+        detail: '3 initial seats · up to 13 · 24-month terms',
+      },
+      {
+        number: '03',
+        name: 'Permanent Groups',
+        role: 'Initiatives and expertise',
+        text: 'Culture, Education, and Technology develop initiatives and decide internally within their mandates.',
+        detail: 'Culture · Education · Technology',
+      },
     ],
-    decisions: 'Decisions and voting',
-    decisionsIntro: 'Each recognized member has one vote. Participation may be direct or delegated to another member under procedures approved by the association.',
-    decisionCards: [
-      ['Ordinary decisions', '> 50%', 'Simple majority of valid votes, with quorum.'],
-      ['Major decisions', '2/3', 'Relevant initiatives and policy changes.'],
-      ['Amendments', '3/4', 'Association-wide vote with constitutional quorum.'],
+    flowLabel: 'From proposal to execution',
+    flowTitle: 'One decision, five moments',
+    flowIntro: 'The operating model for treasury spending, policies, and initiatives turns every decision into a verifiable record.',
+    flow: [
+      ['01', 'Propose', 'Define the objective, scope, cost, owner, and requested action.'],
+      ['02', 'Classify', 'Identify the competent body, decision type, and applicable threshold.'],
+      ['03', 'Deliberate', 'Publish in the unified forum, gather input, and record conflicts of interest.'],
+      ['04', 'Vote', 'Fix member eligibility and count one vote per active credential.'],
+      ['05', 'Execute', 'After approval, execute the authorized action and publish the result.'],
     ],
-    quorumTitle: 'Quorum',
-    quorumText: 'At least 50% of eligible voting members of a decision-making body must participate or be validly represented. Association-wide votes count all registered members.',
-    overrideTitle: 'Council override authority',
-    overrideText: 'When a delegated body fails two valid votes, misses quorum after three duly noticed attempts, or enters formal deadlock, the Council may adopt a binding resolution by a 2/3 majority — without contradicting the Constitution.',
-    conflicts: 'Conflict resolution',
-    conflictSteps: [
-      ['01', 'Listening and mediation', 'The Group and its First Chair present the situation to the Primary Council.'],
-      ['02', 'Seeking agreement', 'Inter-group conflicts bring together all three First Chairs and the Council, seeking unanimity.'],
-      ['03', 'Binding resolution', 'If agreement is impossible, the Council may decide by 2/3, with quorum and recorded perspectives.'],
+    forum: 'Open the member forum',
+    thresholdsLabel: 'Constitutional thresholds',
+    thresholds: [
+      ['> 50%', 'Ordinary', 'Simple majority of valid votes.'],
+      ['2/3', 'Major', 'Relevant initiatives and policy changes.'],
+      ['3/4', 'Amendment', 'Association-wide vote.'],
     ],
+    quorum: 'Every official vote requires quorum. Unless a specific rule applies, at least 50% of eligible members participate or are validly represented.',
+    safeguardsLabel: 'Safeguards',
+    safeguardsTitle: 'Exceptions without shortcuts',
+    conflicts: 'Conflicts and deadlocks',
+    conflictsText: 'The Council hears the Group and its First Chair. Inter-group conflicts also bring together all three First Chairs and seek unanimity. A binding resolution requires a 2/3 Council vote, quorum, and a record of the perspectives.',
+    escalation: 'Intervention may follow two valid votes without a decision, three duly noticed attempts without quorum, or a formally escalated conflict.',
     amendments: 'Constitutional amendments',
-    amendmentsIntro: 'The Constitution can evolve, but only through a deliberate, transparent, and participatory process.',
-    amendmentFacts: [
-      ['17.5%', 'of members may initiate a petition'],
-      ['45 days', 'minimum member discussion period'],
-      ['50%', 'quorum of all registered members'],
-      ['3/4', 'of valid votes for approval'],
+    amendmentsText: 'They may be proposed by the Council, a Permanent Group, or a member petition. The proposal is made public to members before an association-wide vote.',
+    amendmentFacts: [['17.5%', 'petition'], ['45 days', 'discussion'], ['50%', 'quorum'], ['3/4', 'approval']],
+    boundaryLabel: 'Constitution + code',
+    boundaryTitle: 'Automate rules, preserve human judgment.',
+    boundaryIntro: 'The contract executes objective conditions. The association remains responsible for facts, interpretation, and due process.',
+    canTitle: 'Code can enforce',
+    can: [
+      'membership state and one active credential per approved member',
+      'eligibility fixed at the start of a vote and one-vote weight',
+      'quorum, threshold, timing, and the authorized action',
+      'Safe execution and a public record of the result',
     ],
-    contractLabel: 'Execution through smart contracts',
-    contractTitle: 'Code must obey the Constitution.',
-    contractText: 'Membership, delegation, voting, and execution contracts will be published and verifiable. Any divergence between code and constitutional text should pause automated action and return the matter to human governance.',
-    source: 'Read the complete Constitution',
+    cannotTitle: 'Requires human judgment',
+    cannot: [
+      'assessing a qualifying contribution or a member’s good standing',
+      'determining facts, conflicts of interest, or abuse',
+      'interpreting the Constitution’s purpose and values',
+      'ensuring notice, a fair hearing, reasons, and appeal',
+    ],
+    deployment: 'Membership and governance contracts have not yet been deployed. Official addresses and states will be published in the Constitution’s blockchain registry.',
+    registry: 'View the blockchain registry',
   },
 };
 
 export function GovernancePage({ locale }: { locale: Locale }) {
   const c = copy[locale];
   const isPt = locale === 'pt';
+  const constitutionHref = isPt ? '/constituicao' : '/en/constitution';
+
   return (
     <main lang={isPt ? 'pt-PT' : 'en'}>
-      <SiteHeader locale={locale} />
+      <SiteHeader locale={locale} languageHref={isPt ? '/en/governance' : '/governacao'} />
+
       <section className="internal-hero governance-hero">
-        <p className="eyebrow">§3–§6 · {isPt ? 'Constituição' : 'Constitution'}</p>
+        <p className="eyebrow">{c.eyebrow}</p>
         <h1>{c.title}</h1>
         <p>{c.intro}</p>
-        <span className="status-pill">{c.status}</span>
+        <div className="governance-hero__actions">
+          <span className="status-pill">{c.status}</span>
+          <Link className="text-link" href={constitutionHref}>{c.constitution} <span>→</span></Link>
+        </div>
       </section>
 
-      <section className="council-section">
-        <div className="council-copy"><p className="eyebrow">§3.1</p><h2>{c.council}</h2><p>{c.councilText}</p></div>
-        <div className="council-facts">{c.councilFacts.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
+      <section className="authority-map">
+        <div className="governance-section-heading">
+          <div><p className="eyebrow">§3 · {c.authorityLabel}</p><h2>{c.authorityTitle}</h2></div>
+          <p>{c.authorityIntro}</p>
+        </div>
+        <div className="authority-list">
+          {c.authorities.map((authority) => (
+            <article className="authority-row" key={authority.number}>
+              <span>{authority.number}</span>
+              <div><p>{authority.role}</p><h3>{authority.name}</h3></div>
+              <p>{authority.text}</p>
+              <strong>{authority.detail}</strong>
+            </article>
+          ))}
+        </div>
       </section>
 
-      <section className="governance-groups">
-        <p className="eyebrow">{c.groupLabel}</p>
-        <div>{c.groups.map(([name, text], index) => <article key={name}><span>0{index + 1}</span><h3>{name}</h3><p>{text}</p></article>)}</div>
+      <section className="decision-workflow" id={isPt ? 'decisoes' : 'decisions'}>
+        <div className="governance-section-heading governance-section-heading--dark">
+          <div><p className="eyebrow">§4 · {c.flowLabel}</p><h2>{c.flowTitle}</h2></div>
+          <div><p>{c.flowIntro}</p><Link className="text-link" href={isPt ? '/membros/forum' : '/en/members/forum'}>{c.forum} <span>→</span></Link></div>
+        </div>
+        <div className="workflow-steps">
+          {c.flow.map(([number, title, item]) => (
+            <article key={number}><span>{number}</span><h3>{title}</h3><p>{item}</p></article>
+          ))}
+        </div>
+        <div className="threshold-block">
+          <p className="eyebrow">{c.thresholdsLabel}</p>
+          <div className="threshold-grid">
+            {c.thresholds.map(([value, title, item]) => (
+              <article key={title}><strong>{value}</strong><div><h3>{title}</h3><p>{item}</p></div></article>
+            ))}
+          </div>
+          <p className="quorum-note"><span>§4.3</span>{c.quorum}</p>
+        </div>
       </section>
 
-      <section className="decision-section" id={isPt ? 'decisoes' : 'decisions'}>
-        <div className="decision-heading"><p className="eyebrow">§4</p><h2>{c.decisions}</h2><p>{c.decisionsIntro}</p></div>
-        <div className="decision-cards">{c.decisionCards.map(([title, value, text]) => <article key={title}><span>{value}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
-        <div className="rule-notes"><article><span>§4.3</span><h3>{c.quorumTitle}</h3><p>{c.quorumText}</p></article><article><span>§4.6</span><h3>{c.overrideTitle}</h3><p>{c.overrideText}</p></article></div>
+      <section className="governance-safeguards">
+        <div className="governance-section-heading">
+          <div><p className="eyebrow">§5–§6 · {c.safeguardsLabel}</p><h2>{c.safeguardsTitle}</h2></div>
+        </div>
+        <div className="safeguard-grid">
+          <article className="safeguard-card" id={isPt ? 'conflitos' : 'conflicts'}>
+            <span>§5</span><h3>{c.conflicts}</h3><p>{c.conflictsText}</p><p className="safeguard-note">{c.escalation}</p>
+          </article>
+          <article className="safeguard-card safeguard-card--gold" id={isPt ? 'emendas' : 'amendments'}>
+            <span>§6</span><h3>{c.amendments}</h3><p>{c.amendmentsText}</p>
+            <div className="amendment-metrics">
+              {c.amendmentFacts.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section className="conflict-section" id={isPt ? 'conflitos' : 'conflicts'}>
-        <div className="side-title"><p className="eyebrow">§5</p><h2>{c.conflicts}</h2></div>
-        <div className="conflict-steps">{c.conflictSteps.map(([number, title, text]) => <article key={number}><strong>{number}</strong><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+      <section className="enforcement-boundary">
+        <div className="governance-section-heading governance-section-heading--dark">
+          <div><p className="eyebrow">{c.boundaryLabel}</p><h2>{c.boundaryTitle}</h2></div>
+          <p>{c.boundaryIntro}</p>
+        </div>
+        <div className="boundary-grid">
+          <article><p className="boundary-label">01 · {c.canTitle}</p><ul>{c.can.map((item) => <li key={item}>{item}</li>)}</ul></article>
+          <article><p className="boundary-label">02 · {c.cannotTitle}</p><ul>{c.cannot.map((item) => <li key={item}>{item}</li>)}</ul></article>
+        </div>
+        <div className="deployment-note"><p>{c.deployment}</p><Link className="text-link" href={`${constitutionHref}#${isPt ? 'registo-blockchain' : 'blockchain-registry'}`}>{c.registry} <span>→</span></Link></div>
       </section>
 
-      <section className="amendment-section" id={isPt ? 'emendas' : 'amendments'}>
-        <div className="amendment-heading"><p className="eyebrow">§6</p><h2>{c.amendments}</h2><p>{c.amendmentsIntro}</p></div>
-        <div className="amendment-grid">{c.amendmentFacts.map(([value, text]) => <article key={text}><strong>{value}</strong><p>{text}</p></article>)}</div>
-      </section>
-
-      <section className="contract-principle">
-        <p className="eyebrow">{c.contractLabel}</p><h2>{c.contractTitle}</h2><p>{c.contractText}</p>
-        <Link className="text-link" href={isPt ? '/constituicao' : '/en/constitution'}>{c.source} <span>→</span></Link>
-      </section>
       <SiteFooter locale={locale} />
     </main>
   );
