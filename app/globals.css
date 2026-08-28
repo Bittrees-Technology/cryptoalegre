@@ -767,3 +767,278 @@ a { color: inherit; text-decoration: none; }
   .issuance-review { padding: 28px 20px; }
   .issuance-review dl > div { grid-template-columns: 1fr; gap: 8px; }
 }
+
+.constitution-hero {
+  padding: 125px 8vw 110px;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 87% 18%, rgba(255, 200, 19, 0.13), transparent 25%),
+    var(--ink);
+}
+.constitution-hero h1 {
+  max-width: 1050px;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(62px, 8.5vw, 132px);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+.constitution-hero__intro {
+  max-width: 830px;
+  margin: 38px 0 0;
+  color: var(--paper-muted);
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.7;
+}
+.constitution-hero__status {
+  display: grid;
+  max-width: 1050px;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+  margin-top: 42px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.constitution-hero__status p {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(203, 217, 216, 0.78);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.chain-registry {
+  padding: 110px 8vw 125px;
+  background: var(--paper);
+  color: var(--ink-deep);
+}
+.chain-registry__heading {
+  display: grid;
+  grid-template-columns: 0.35fr 1fr 0.7fr;
+  align-items: end;
+  gap: 42px;
+  margin-bottom: 62px;
+}
+.chain-registry__heading .eyebrow { align-self: start; color: var(--green); }
+.chain-registry__heading h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(46px, 5.6vw, 82px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.chain-registry__heading > p:not(.eyebrow) {
+  margin: 0;
+  color: rgba(18, 23, 29, 0.66);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.chain-registry__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border-top: 1px solid rgba(18, 23, 29, 0.2);
+  border-left: 1px solid rgba(18, 23, 29, 0.2);
+}
+.chain-record {
+  display: flex;
+  min-width: 0;
+  min-height: 300px;
+  flex-direction: column;
+  padding: 30px;
+  border-right: 1px solid rgba(18, 23, 29, 0.2);
+  border-bottom: 1px solid rgba(18, 23, 29, 0.2);
+}
+.chain-record > span {
+  color: var(--green);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.chain-record > strong {
+  margin-top: 68px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(38px, 4vw, 62px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+.chain-record > code {
+  margin-top: 68px;
+  overflow-wrap: anywhere;
+  color: var(--ink-deep);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(14px, 1.4vw, 19px);
+  line-height: 1.45;
+}
+.chain-record > p {
+  max-width: 640px;
+  margin: auto 0 0;
+  padding-top: 28px;
+  color: rgba(18, 23, 29, 0.65);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.chain-record a {
+  align-self: flex-start;
+  margin-top: 24px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(18, 23, 29, 0.45);
+  font-size: 12px;
+  font-weight: 650;
+}
+.chain-record--ens { grid-column: span 5; background: var(--teal); }
+.chain-record--safe { grid-column: span 7; }
+.chain-record--signers { grid-column: span 7; }
+.chain-record--transition { grid-column: span 5; background: var(--gold); }
+.chain-record--contracts { grid-column: 1 / -1; min-height: 0; background: rgba(59, 160, 173, 0.08); }
+.chain-record--ens > span, .chain-record--transition > span { color: var(--ink-deep); }
+.chain-record__links { display: flex; flex-wrap: wrap; gap: 14px 28px; }
+.chain-record--signers ol {
+  display: grid;
+  gap: 18px;
+  margin: 52px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.chain-record--signers li {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(18, 23, 29, 0.18);
+}
+.chain-record--signers li > span {
+  color: rgba(18, 23, 29, 0.55);
+  font-size: 11px;
+}
+.chain-record--signers a { margin: 0; border: 0; }
+.chain-record--signers code {
+  overflow-wrap: anywhere;
+  color: var(--ink-deep);
+  font-size: 12px;
+}
+.chain-record--transition strong { display: flex; align-items: center; gap: 18px; }
+.chain-record--transition strong i { color: var(--green); font-family: var(--font-geist-sans), sans-serif; font-size: 25px; font-style: normal; }
+.chain-record--contracts dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 45px 0 0;
+}
+.chain-record--contracts dl div { padding-top: 18px; border-top: 1px solid rgba(18, 23, 29, 0.2); }
+.chain-record--contracts dt { font-family: Georgia, 'Times New Roman', serif; font-size: 24px; }
+.chain-record--contracts dd { margin: 10px 0 0; color: rgba(18, 23, 29, 0.58); font-size: 12px; }
+
+.constitution-reader {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.34fr) minmax(0, 1fr);
+  gap: clamp(50px, 8vw, 130px);
+  align-items: start;
+  padding: 120px 8vw 150px;
+  background: var(--ink-deep);
+}
+.constitution-toc {
+  position: sticky;
+  top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.constitution-toc nav { display: flex; flex-direction: column; }
+.constitution-toc nav a {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--paper-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.constitution-toc nav a span { color: var(--sun); font-family: var(--font-geist-mono), monospace; font-size: 10px; }
+.constitution-toc__governance {
+  display: inline-flex;
+  gap: 18px;
+  margin-top: 28px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(238, 246, 245, 0.45);
+  font-size: 12px;
+}
+.constitution-document { max-width: 900px; }
+.constitution-document > .eyebrow { margin-bottom: 50px; }
+.constitution-section {
+  scroll-margin-top: 28px;
+  padding: 0 0 95px;
+  margin: 0 0 95px;
+  border-bottom: 1px solid var(--line);
+}
+.constitution-section:last-child { margin-bottom: 0; }
+.constitution-section__number { margin: 0 0 18px; color: var(--sun); font-family: var(--font-geist-mono), monospace; font-size: 11px; }
+.constitution-section h2 {
+  margin: 0 0 42px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.constitution-section h3 {
+  margin: 66px 0 22px;
+  color: var(--teal-bright);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(30px, 3.2vw, 46px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+.constitution-section h4 {
+  margin: 52px 0 18px;
+  color: var(--sun);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 400;
+}
+.constitution-section p,
+.constitution-section li {
+  color: rgba(238, 246, 245, 0.82);
+  font-size: 16px;
+  line-height: 1.82;
+}
+.constitution-section p { margin: 0 0 26px; }
+.constitution-section ul { display: grid; gap: 17px; margin: 10px 0 34px; padding-left: 24px; }
+.constitution-section li { padding-left: 8px; }
+.constitution-section strong { color: var(--paper); font-weight: 680; }
+
+@media (max-width: 1050px) {
+  .chain-registry__heading { grid-template-columns: 1fr; align-items: start; }
+  .chain-registry__heading .eyebrow { margin-bottom: 0; }
+  .chain-record--ens, .chain-record--safe, .chain-record--signers, .chain-record--transition { grid-column: span 6; }
+  .constitution-reader { grid-template-columns: 1fr; }
+  .constitution-toc { position: static; }
+  .constitution-toc nav { display: grid; grid-template-columns: 1fr 1fr; }
+  .constitution-toc nav a:nth-child(odd) { border-right: 1px solid var(--line); padding-right: 20px; }
+  .constitution-toc nav a:nth-child(even) { padding-left: 20px; }
+}
+
+@media (max-width: 700px) {
+  .constitution-hero, .chain-registry, .constitution-reader { padding-right: 24px; padding-left: 24px; }
+  .constitution-hero { padding-top: 82px; padding-bottom: 82px; }
+  .constitution-hero h1 { font-size: clamp(54px, 17vw, 76px); }
+  .constitution-hero__status { grid-template-columns: 1fr; }
+  .chain-registry { padding-top: 82px; padding-bottom: 90px; }
+  .chain-registry__grid { grid-template-columns: 1fr; }
+  .chain-record--ens, .chain-record--safe, .chain-record--signers, .chain-record--transition, .chain-record--contracts { grid-column: 1; }
+  .chain-record { min-height: 280px; padding: 25px; }
+  .chain-record--contracts dl { grid-template-columns: 1fr; }
+  .chain-record--signers li { grid-template-columns: 1fr; gap: 8px; }
+  .constitution-reader { padding-top: 85px; padding-bottom: 100px; }
+  .constitution-toc nav { grid-template-columns: 1fr; }
+  .constitution-toc nav a:nth-child(odd) { border-right: 0; padding-right: 0; }
+  .constitution-toc nav a:nth-child(even) { padding-left: 0; }
+  .constitution-section { padding-bottom: 68px; margin-bottom: 68px; }
+  .constitution-section h2 { font-size: 48px; }
+  .constitution-section p, .constitution-section li { font-size: 15px; line-height: 1.75; }
+}

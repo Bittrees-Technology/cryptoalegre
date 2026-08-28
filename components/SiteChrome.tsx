@@ -1,14 +1,17 @@
+import Link from 'next/link';
+
 type Locale = 'pt' | 'en';
 
 const copy = {
   pt: {
     notice: 'Constituição em processo de ratificação',
     noticeLink: 'Consultar documento',
-    governance: '/governacao',
+    constitution: '/constituicao',
     home: '/',
     nav: [
       ['Grupos', '/#grupos'],
       ['Governação', '/governacao'],
+      ['Constituição', '/constituicao'],
       ['Iniciativas', '/iniciativas'],
       ['Membros', '/membros'],
     ],
@@ -21,11 +24,12 @@ const copy = {
   en: {
     notice: 'Constitution pending ratification',
     noticeLink: 'Read the document',
-    governance: '/en/governance',
+    constitution: '/en/constitution',
     home: '/en',
     nav: [
       ['Groups', '/en#groups'],
       ['Governance', '/en/governance'],
+      ['Constitution', '/en/constitution'],
       ['Initiatives', '/en/initiatives'],
       ['Members', '/en/members'],
     ],
@@ -37,28 +41,28 @@ const copy = {
   },
 } as const;
 
-export function SiteHeader({ locale }: { locale: Locale }) {
+export function SiteHeader({ locale, languageHref }: { locale: Locale; languageHref?: string }) {
   const content = copy[locale];
 
   return (
     <>
       <div className="notice-bar">
         <span>{content.notice}</span>
-        <a href={content.governance}>{content.noticeLink}</a>
+        <Link href={content.constitution}>{content.noticeLink}</Link>
       </div>
       <header className="site-header">
-        <a className="brand" href={content.home} aria-label="Cryptoalegre — home">
+        <Link className="brand" href={content.home} aria-label="Cryptoalegre — home">
           <span className="brand-mark" aria-hidden="true"><span /></span>
           <span>Cryptoalegre</span>
-        </a>
+        </Link>
         <nav className="primary-nav" aria-label={locale === 'pt' ? 'Navegação principal' : 'Primary navigation'}>
-          {content.nav.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
+          {content.nav.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}
         </nav>
         <div className="header-actions">
-          <a className="language-link" href={content.languageHref} aria-label={content.languageAria}>
+          <Link className="language-link" href={languageHref ?? content.languageHref} aria-label={content.languageAria}>
             {content.languageLabel}
-          </a>
-          <a className="member-button" href={content.memberHref}>{content.member}</a>
+          </Link>
+          <Link className="member-button" href={content.memberHref}>{content.member}</Link>
         </div>
       </header>
     </>
@@ -79,19 +83,20 @@ export function SiteFooter({ locale }: { locale: Locale }) {
       <div className="footer-links">
         <div>
           <span>{isPt ? 'Associação' : 'Association'}</span>
-          <a href={isPt ? '/#grupos' : '/en#groups'}>{isPt ? 'Grupos' : 'Groups'}</a>
-          <a href={isPt ? '/iniciativas' : '/en/initiatives'}>{isPt ? 'Iniciativas' : 'Initiatives'}</a>
+          <Link href={isPt ? '/#grupos' : '/en#groups'}>{isPt ? 'Grupos' : 'Groups'}</Link>
+          <Link href={isPt ? '/iniciativas' : '/en/initiatives'}>{isPt ? 'Iniciativas' : 'Initiatives'}</Link>
         </div>
         <div>
           <span>{isPt ? 'Governação' : 'Governance'}</span>
-          <a href={isPt ? '/governacao#decisoes' : '/en/governance#decisions'}>{isPt ? 'Decisões' : 'Decisions'}</a>
-          <a href={isPt ? '/governacao#conflitos' : '/en/governance#conflicts'}>{isPt ? 'Conflitos' : 'Conflicts'}</a>
-          <a href={isPt ? '/governacao#emendas' : '/en/governance#amendments'}>{isPt ? 'Emendas' : 'Amendments'}</a>
+          <Link href={isPt ? '/constituicao' : '/en/constitution'}>{isPt ? 'Constituição' : 'Constitution'}</Link>
+          <Link href={isPt ? '/governacao#decisoes' : '/en/governance#decisions'}>{isPt ? 'Decisões' : 'Decisions'}</Link>
+          <Link href={isPt ? '/governacao#conflitos' : '/en/governance#conflicts'}>{isPt ? 'Conflitos' : 'Conflicts'}</Link>
+          <Link href={isPt ? '/governacao#emendas' : '/en/governance#amendments'}>{isPt ? 'Emendas' : 'Amendments'}</Link>
         </div>
         <div>
           <span>{isPt ? 'Ligações' : 'Links'}</span>
           <a href="https://app.ens.domains/cryptoalegre.eth" rel="noreferrer" target="_blank">cryptoalegre.eth ↗</a>
-          <a href={isPt ? '/membros' : '/en/members'}>{isPt ? 'Área de membros' : 'Member area'}</a>
+          <Link href={isPt ? '/membros' : '/en/members'}>{isPt ? 'Área de membros' : 'Member area'}</Link>
         </div>
       </div>
       <p className="footer-note">Alentejo · Portugal · {new Date().getFullYear()}</p>

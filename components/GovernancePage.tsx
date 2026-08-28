@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
 type Locale = 'pt' | 'en';
@@ -44,7 +45,7 @@ const copy = {
     contractLabel: 'Execução através de contratos inteligentes',
     contractTitle: 'O código deve obedecer à Constituição.',
     contractText: 'Os contratos de adesão, delegação, votação e execução serão publicados e verificáveis. Qualquer diferença entre o código e o texto constitucional deve suspender a ação automática e ser encaminhada para governação humana.',
-    source: 'Consultar a versão de origem',
+    source: 'Ler a Constituição completa',
   },
   en: {
     title: 'Governance with clear rules and limited authority.',
@@ -87,7 +88,7 @@ const copy = {
     contractLabel: 'Execution through smart contracts',
     contractTitle: 'Code must obey the Constitution.',
     contractText: 'Membership, delegation, voting, and execution contracts will be published and verifiable. Any divergence between code and constitutional text should pause automated action and return the matter to human governance.',
-    source: 'View the source version',
+    source: 'Read the complete Constitution',
   },
 };
 
@@ -132,7 +133,7 @@ export function GovernancePage({ locale }: { locale: Locale }) {
 
       <section className="contract-principle">
         <p className="eyebrow">{c.contractLabel}</p><h2>{c.contractTitle}</h2><p>{c.contractText}</p>
-        <a className="text-link" href={isPt ? 'https://cryptoalegre.eth.limo/constituicao/' : 'https://cryptoalegre.eth.limo/en/constitution/'} target="_blank" rel="noreferrer">{c.source} <span>↗</span></a>
+        <Link className="text-link" href={isPt ? '/constituicao' : '/en/constitution'}>{c.source} <span>→</span></Link>
       </section>
       <SiteFooter locale={locale} />
     </main>

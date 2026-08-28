@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
 type Locale = 'pt' | 'en';
@@ -19,6 +20,7 @@ const content = {
     explore: 'Explorar o grupo',
     groupBase: '/grupos',
     governanceHref: '/governacao',
+    constitutionHref: '/constituicao',
     principlesEyebrow: 'Constituição como fundamento',
     principlesTitle: 'Palavras públicas. Regras verificáveis.',
     principlesText: 'A Constituição define os direitos dos membros, a governação e os limites de autoridade. Os contratos inteligentes destinam-se a executar essas regras com transparência — nunca a substituí-las.',
@@ -53,6 +55,7 @@ const content = {
     explore: 'Explore the group',
     groupBase: '/en/groups',
     governanceHref: '/en/governance',
+    constitutionHref: '/en/constitution',
     principlesEyebrow: 'Constitution as foundation',
     principlesTitle: 'Public words. Verifiable rules.',
     principlesText: 'The Constitution defines member rights, governance, and the limits of authority. Smart contracts are intended to execute those rules transparently — never to replace them.',
@@ -85,7 +88,7 @@ export function HomePage({ locale }: { locale: Locale }) {
           <p className="hero-intro">{c.intro}</p>
           <div className="hero-actions">
             <a className="button button--primary" href={`#${c.groupsId}`}>{c.primary} <span aria-hidden="true">↘</span></a>
-            <a className="text-link" href={c.governanceHref}>{c.constitution} <span aria-hidden="true">→</span></a>
+            <Link className="text-link" href={c.constitutionHref}>{c.constitution} <span aria-hidden="true">→</span></Link>
           </div>
         </div>
         <div className="hero-art" aria-label={isPt ? 'Paisagem estilizada do Alentejo ao nascer do sol' : 'Stylized Alentejo landscape at sunrise'} role="img">
@@ -108,7 +111,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       <section className="constitution-intro">
-        <div className="constitution-copy"><p className="eyebrow">{c.principlesEyebrow}</p><h2>{c.principlesTitle}</h2><p>{c.principlesText}</p><a className="button button--outline" href={c.governanceHref}>{c.constitution} <span>→</span></a></div>
+        <div className="constitution-copy"><p className="eyebrow">{c.principlesEyebrow}</p><h2>{c.principlesTitle}</h2><p>{c.principlesText}</p><Link className="button button--outline" href={c.constitutionHref}>{c.constitution} <span>→</span></Link></div>
         <div className="stat-grid">{c.stats.map(([value, label]) => <div className="stat" key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
       </section>
 
