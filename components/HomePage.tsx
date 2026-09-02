@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
@@ -91,9 +92,15 @@ export function HomePage({ locale }: { locale: Locale }) {
             <Link className="text-link" href={c.constitutionHref}>{c.constitution} <span aria-hidden="true">→</span></Link>
           </div>
         </div>
-        <div className="hero-art" aria-label={isPt ? 'Paisagem estilizada do Alentejo ao nascer do sol' : 'Stylized Alentejo landscape at sunrise'} role="img">
-          <div className="sun" /><div className="rays" /><div className="ridge ridge--back" /><div className="ridge ridge--front" />
-          <div className="tree"><span className="tree-trunk" /><span className="tree-crown tree-crown--one" /><span className="tree-crown tree-crown--two" /><span className="tree-crown tree-crown--three" /></div>
+        <div className="hero-art">
+          <Image
+            className="hero-art__image"
+            src="/cryptoalegre-alentejo.jpeg"
+            alt={isPt ? 'Paisagem do Alentejo com raios de sol, uma árvore e o símbolo Bitcoin' : 'Alentejo landscape with sun rays, a tree, and the Bitcoin symbol'}
+            fill
+            priority
+            sizes="(max-width: 1000px) 100vw, 48vw"
+          />
           <p className="art-caption">Alentejo · Portugal</p>
         </div>
       </section>

@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     siteName: 'Cryptoalegre',
     locale: 'pt_PT',
     type: 'website',
-    images: [{ url: '/og.png', width: 1672, height: 941, alt: 'Cryptoalegre — Cultura, Educação e Tecnologia' }],
+    images: [{ url: '/cryptoalegre-alentejo.jpeg', width: 1086, height: 724, alt: 'Cryptoalegre — Alentejo, cultura e tecnologia' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cryptoalegre — Cultura, Educação e Tecnologia',
     description: 'Cultura lidera. A tecnologia possibilita. A educação liga.',
-    images: ['/og.png'],
+    images: ['/cryptoalegre-alentejo.jpeg'],
   },
 };
 
