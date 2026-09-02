@@ -99,7 +99,8 @@ export function HomePage({ locale }: { locale: Locale }) {
             alt={isPt ? 'Paisagem do Alentejo com raios de sol, uma árvore e o símbolo Bitcoin' : 'Alentejo landscape with sun rays, a tree, and the Bitcoin symbol'}
             fill
             priority
-            sizes="(max-width: 1000px) 100vw, 48vw"
+            quality={90}
+            sizes="(max-width: 1000px) 180vw, 80vw"
           />
           <p className="art-caption">Alentejo · Portugal</p>
         </div>
