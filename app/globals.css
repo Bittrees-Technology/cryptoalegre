@@ -281,11 +281,10 @@ a { color: inherit; text-decoration: none; }
 .membership-orbit span:nth-child(3) { left: 30%; bottom: 15%; }
 
 .featured-initiative { display: grid; grid-template-columns: 1.08fr 0.92fr; min-height: 620px; background: var(--paper); color: var(--ink-deep); }
-.initiative-visual { position: relative; min-height: 560px; overflow: hidden; background: var(--teal); }
-.olive-sun { position: absolute; top: 14%; right: 12%; width: 210px; aspect-ratio: 1; border-radius: 50%; background: var(--sun); }
-.olive-field { position: absolute; inset: 35% -15% -35%; border-radius: 50% 50% 0 0; background: var(--olive); transform: rotate(4deg); }
-.olive-field::before, .olive-field::after { content: ''; position: absolute; inset: 18% -10% auto; height: 18%; border-radius: 50%; border-top: 2px solid rgba(229, 170, 47, 0.9); transform: rotate(-6deg); }
-.olive-field::after { inset: 42% -8% auto; transform: rotate(2deg); }
+.initiative-visual { position: relative; min-height: 560px; overflow: hidden; background: var(--olive); }
+.initiative-visual::after, .initiative-landscape::after { content: ''; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, transparent 62%, rgba(24, 32, 27, 0.2)); pointer-events: none; }
+.initiative-visual__image, .initiative-landscape__image { object-fit: cover; object-position: 50% center; }
+.initiative-visual__caption, .initiative-landscape__caption { position: absolute; z-index: 2; right: 24px; bottom: 18px; margin: 0; padding: 7px 10px; background: rgba(24, 32, 27, 0.78); color: var(--paper); font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
 .initiative-copy { display: flex; flex-direction: column; justify-content: center; padding: 90px 9vw 90px 7vw; }
 .initiative-copy .eyebrow { color: var(--green); }
 .initiative-copy > p:not(.eyebrow) { color: rgba(24, 32, 27, 0.68); }
@@ -464,13 +463,7 @@ a { color: inherit; text-decoration: none; }
 .initiative-hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 110px 7vw; }
 .initiative-hero-copy h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(82px, 10vw, 150px); font-weight: 400; letter-spacing: -0.07em; line-height: 0.9; }
 .initiative-hero-copy > p:not(.eyebrow) { max-width: 560px; margin: 36px 0 0; color: var(--paper-muted); font-size: 18px; line-height: 1.65; }
-.initiative-landscape { position: relative; overflow: hidden; background: repeating-conic-gradient(from 250deg at 50% 55%, var(--gold) 0deg 10deg, var(--teal) 10deg 20deg); }
-.initiative-sun { position: absolute; left: 50%; top: 44%; width: 200px; aspect-ratio: 1; transform: translate(-50%, -50%); border: 17px solid rgba(67, 78, 61, 0.66); border-radius: 50%; background: var(--sun); }
-.initiative-hill { position: absolute; left: -15%; width: 130%; height: 40%; border-radius: 50% 50% 0 0; background: var(--olive); }
-.initiative-hill--one { bottom: 3%; transform: rotate(-5deg); }
-.initiative-hill--two { bottom: -24%; background: var(--ink-deep); transform: rotate(5deg); }
-.initiative-tree { position: absolute; z-index: 2; left: 23%; bottom: 17%; width: 12px; height: 170px; background: var(--ink-deep); }
-.initiative-tree::before { content: ''; position: absolute; left: -70px; top: -42px; width: 150px; height: 105px; border-radius: 50%; background: var(--ink-deep); }
+.initiative-landscape { position: relative; overflow: hidden; background: var(--olive); }
 .initiative-overview { display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; padding: 120px 8vw; background: var(--paper); color: var(--ink-deep); }
 .initiative-overview .eyebrow { color: var(--green); }
 .initiative-overview h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(48px, 6vw, 82px); font-weight: 400; letter-spacing: -0.05em; line-height: 1; }
