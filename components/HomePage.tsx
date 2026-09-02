@@ -129,7 +129,17 @@ export function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       <section className="featured-initiative">
-        <div className="initiative-visual" aria-hidden="true"><div className="olive-sun" /><div className="olive-field" /></div>
+        <div className="initiative-visual">
+          <Image
+            className="initiative-visual__image"
+            src="/horta-do-baldio.jpeg"
+            alt={isPt ? 'Ilustração da Horta do Baldio com olival, casa, crianças e figuras robóticas' : 'Illustration of Horta do Baldio with an olive grove, house, children, and robotic figures'}
+            fill
+            quality={90}
+            sizes="(max-width: 900px) 175vw, 75vw"
+          />
+          <p className="initiative-visual__caption">Horta do Baldio · Alentejo</p>
+        </div>
         <div className="initiative-copy"><p className="eyebrow">{c.initiativeLabel}</p><h2>{c.initiativeTitle}</h2><p>{c.initiativeText}</p><a className="text-link" href={isPt ? '/iniciativas' : '/en/initiatives'}>{c.initiativeCta} <span>→</span></a></div>
       </section>
       <SiteFooter locale={locale} />

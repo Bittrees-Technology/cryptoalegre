@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SiteFooter, SiteHeader } from './SiteChrome';
 
 type Locale = 'pt' | 'en';
@@ -43,7 +44,18 @@ export function InitiativesPage({ locale }: { locale: Locale }) {
       <SiteHeader locale={locale} />
       <section className="initiative-hero">
         <div className="initiative-hero-copy"><p className="eyebrow">{c.eyebrow}</p><h1>{c.title}</h1><p>{c.intro}</p></div>
-        <div className="initiative-landscape" aria-hidden="true"><span className="initiative-sun" /><span className="initiative-hill initiative-hill--one" /><span className="initiative-hill initiative-hill--two" /><span className="initiative-tree" /></div>
+        <div className="initiative-landscape">
+          <Image
+            className="initiative-landscape__image"
+            src="/horta-do-baldio.jpeg"
+            alt={isPt ? 'Ilustração da Horta do Baldio com olival, casa, crianças e figuras robóticas' : 'Illustration of Horta do Baldio with an olive grove, house, children, and robotic figures'}
+            fill
+            priority
+            quality={90}
+            sizes="(max-width: 900px) 190vw, 85vw"
+          />
+          <p className="initiative-landscape__caption">Horta do Baldio · Alentejo</p>
+        </div>
       </section>
       <section className="initiative-overview">
         <div><p className="eyebrow">{isPt ? 'Visão geral' : 'Overview'}</p><h2>{c.overviewTitle}</h2></div><p>{c.overview}</p>
