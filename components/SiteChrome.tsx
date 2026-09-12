@@ -95,7 +95,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         </div>
         <div>
           <span>{isPt ? 'Ligações' : 'Links'}</span>
-          <a href="https://app.ens.domains/cryptoalegre.eth" rel="noreferrer" target="_blank">cryptoalegre.eth ↗</a>
+          <a data-insights="navigate-appensdomains/cryptoalegreeth" href="https://app.ens.domains/cryptoalegre.eth" rel="noreferrer" target="_blank">cryptoalegre.eth ↗</a>
           <Link href={isPt ? '/membros' : '/en/members'}>{isPt ? 'Área de membros' : 'Member area'}</Link>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import InsightsScript from "next/script";
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -42,7 +43,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-PT">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}<InsightsScript src="https://insights.bittrees.org/consent.js" data-insights-site="cryptoalegre" strategy="afterInteractive" />
+      </body>
     </html>
   );
 }
