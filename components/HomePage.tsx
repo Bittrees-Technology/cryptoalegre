@@ -82,7 +82,7 @@ export function HomePage({ locale }: { locale: Locale }) {
   const isPt = locale === 'pt';
   return (
     <main lang={locale === 'pt' ? 'pt-PT' : 'en'}>
-      <SiteHeader locale={locale} />
+      <SiteHeader locale={locale} homeHeading />
       <section className="hero">
         <div className="hero-copy hero-copy--without-title">
           <p className="eyebrow">{c.legal}</p>

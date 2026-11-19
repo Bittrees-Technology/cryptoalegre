@@ -41,8 +41,14 @@ const copy = {
   },
 } as const;
 
-export function SiteHeader({ locale, languageHref }: { locale: Locale; languageHref?: string }) {
+export function SiteHeader({ locale, languageHref, homeHeading }: {
+  locale: Locale; languageHref?: string; homeHeading?: boolean;
+}) {
   const content = copy[locale];
+  const brand = <Link className="brand" href={content.home} aria-label={locale === 'pt' ? 'Cryptoalegre — início' : 'Cryptoalegre — home'}>
+    <span className="brand-mark" aria-hidden="true"><span /></span>
+    <span>Cryptoalegre</span>
+  </Link>;
 
   return (
     <>
@@ -51,10 +57,7 @@ export function SiteHeader({ locale, languageHref }: { locale: Locale; languageH
         <Link href={content.constitution}>{content.noticeLink}</Link>
       </div>
       <header className="site-header">
-        <Link className="brand" href={content.home} aria-label="Cryptoalegre — home">
-          <span className="brand-mark" aria-hidden="true"><span /></span>
-          <span>Cryptoalegre</span>
-        </Link>
+        {homeHeading ? <h1 className="brand-heading">{brand}</h1> : brand}
         <nav className="primary-nav" aria-label={locale === 'pt' ? 'Navegação principal' : 'Primary navigation'}>
           {content.nav.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}
         </nav>
